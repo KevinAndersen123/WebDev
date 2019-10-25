@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+<table>
+    <tr>
+        <th>Player Name</th><th>Score</th>
+    </tr>
+    {% for row in the_data[:10] %}
+    <tr>
+        <td>{{ row[1] }}</td><td>{{ row[0] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

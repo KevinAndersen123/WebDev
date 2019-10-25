@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+</p>
+Welcome to the guessing game!
+</p>
+<form method="POST" action="/response">
+    <p>
+        Guess the number : <input type = "TEXT" number = "number">
+    </p>
+    <p>
+        <input type="submit" value="Enter">
+    </p>
+</form>
+{% endblock %}

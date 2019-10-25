@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body %}
+<p>
+Congratulations! Your score is: {{ the_score }}  
+</p>
+<form method="POST" action="/recordhighscore">
+    <p>
+       Tell me your name: <input type="TEXT" name="player"> 
+    </p>
+    <input type="hidden" name = "score" value = "{{ the_score }}">
+    <p>
+        <input type="submit" value="Record High Score">
+    </p>
+</form>
+
+{% endblock %}
