@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body %}
+<p>
+    Congratulations! You guessed correctly. The number was {{the_number}}
+</p>
+<p>
+    You guessed it in {{the_guesses}} tries.
+</p>
+    
+
+<form method="POST" action="/recordName">
+    <p>
+        Enter your name : <input type = "text" name = "player_name">
+    </p>
+    <p>
+        <input type="submit" value="Enter">
+    </p>
+</form>
+{% endblock %}

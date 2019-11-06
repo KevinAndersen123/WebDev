@@ -2,14 +2,22 @@
 
 {% block body %}
 </p>
-Welcome to the guessing game!
+    Welcome to the guessing game!
 </p>
-<form method="POST" action="/response">
+
+</p>
+    Guess a number between 1 and 1000
+</p>
+
+</p>
+    {{the_script}}
+</p>
+<form method="POST" action="/guessedNumber">
     <p>
-        Guess the number : <input type = "TEXT" number = "number">
+        Guess the number : <input type = "number" name = "guessedNumber">
     </p>
     <p>
-        <input type="submit" value="Enter">
+        <input type="submit" value="Guess">
     </p>
 </form>
 {% endblock %}
