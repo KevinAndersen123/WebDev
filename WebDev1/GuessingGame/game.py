@@ -6,7 +6,7 @@ import time
 
 LEADERBOARD = "data/leaderboard.pickle"
 app = Flask(__name__)
-@app.route("/guessingGame")
+@app.route("/game")
 def guessNumber():
     randNum = random.randint(0,1000)
     session["number"] = randNum
@@ -80,7 +80,7 @@ def show_highscores():
        return render_template(
             "leaderboard.html",
             the_title = "Highscores",
-            the_data = data
+            the_data=sorted(data, reverse=False)
         )
     
 app.secret_key = "Kevin123 ggwp"
