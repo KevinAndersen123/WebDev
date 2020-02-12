@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block the_body %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Show List</title>
+    </head>
+    <body>
+        <ul>
+            {% for row in the_data %}
+                <li><a href="/selected/{{ row[0] }}">{{ row[1] }}</a></li>                
+            {% endfor %}
+        </ul>
+        
+    </body>
+</html>
+{% endblock %}

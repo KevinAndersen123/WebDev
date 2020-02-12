@@ -1,3 +1,4 @@
+#author Kevin Andersen
 from flask import Flask, render_template, session, request
 import random
 import pickle
@@ -73,7 +74,7 @@ def storeScore():
     with open(LEADERBOARD,"wb") as pf:
             pickle.dump(data,pf)
     return "Your name and score is now recorded"
-@app.route("/highscore")
+@app.route("/highscores")
 def show_highscores():
        with open(LEADERBOARD,"rb") as pf:
             data = pickle.load(pf)
