@@ -1,14 +1,27 @@
-{% extends "base.html" %}
+{% extends "Base.html" %}
+<!--Help from Mohammad-->
+{% block body %}
 
-{% block the_body %}
-<h1>Display a Password Field</h1>
+<p>
+    Please insert Login Details
+</p>
 
-<form methods="POST" action="/login">
-  <label for="email">Username:</label>
-  <input type="username" id="username" name="username"><br><br>
-  <label for="pwd">Password:</label>
-  <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
-  <input type="submit">
+<form method="POST" action="/games">
+
+<p> 
+        Name :  <input type="text" name="loginName">  
+        
+</p>
+
+<p> 
+        Password : <input type="text" name="loginPassword">
+</p> 
+        
+<p>
+        <input type="submit" value="login">
+</p>
+
 </form>
+
 
 {% endblock %}

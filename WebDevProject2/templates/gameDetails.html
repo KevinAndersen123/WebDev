@@ -1,5 +1,50 @@
-{% extends "base.html" %}
+{% extends "Base.html" %}
 
-{% block the_body %}
+{% block body %}
+<!--Help from Mohammad-->
+<p>
+    Game Details
+</p>
+
+<p>
+    <table>
+        <tr>
+            <th>Rating</th> <th> User </th> <th> Comment </th><th>Owners</th> <th>Played</th> <th> Like/Dislike </th>
+        </tr>
+
+        {% for row in the_data %}
+         <tr>
+             <td> {{ row[1] }} </td> <td> {{ row[2] }} </td> <td> {{ row[4] }} </td>  
+
+             {% if  row[6]  == 0 %}
+             <td> owned </td> 
+             {% else %}
+             <td> not owned </td> 
+             {% endif %} 
+
+             {% if  row[7]  == 0 %}
+             <td> played </td> 
+             {% else %}
+             <td> not played </td> 
+             {% endif %} 
+
+             {% if  row[8]  == 0 %}
+             <td> nuetral </td> 
+             {% elif  row[8]  == 1 %}
+             <td> like </td> 
+             {% else %}
+             <td> dislike </td> 
+             {% endif %} 
+            
+            </tr>
+        {% endfor %}
+    
+    </table>
+</p>
+
+<form  action="/writeReview">
+    <input type="submit" value="Review Game" >
+</form>
+
 
 {% endblock %}

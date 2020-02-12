@@ -1,5 +1,51 @@
-{% extends "base.html" %}
+{% extends "Base.html" %}
 
-{% block the_body %}
+{% block body %}
+
+<p>
+    Review
+</p>
+
+
+<form method="POST" action="/submitReview">
+
+  <p>
+  Rate (0-10)
+    <input type ="number" name="Rating" min="0" max="10" required="true">
+  </p>
+
+  <p>
+    No opinion
+    <input type="radio" name="Like/Dislike" value="0" required="true">
+  </p>
+
+  <p>
+    Like
+    <input type="radio" name="Like/Dislike" value="1" required="true">
+  </p>
+  
+  <p>
+    Dislike
+    <input type="radio" name="Like/Dislike" value="2" required="true">
+  </p>
+
+  <p>
+    Have you played the game?
+    <input type="checkbox" name="played" value="0">
+  </p>
+
+  <p>
+    Do you own the game? 
+    <input type="checkbox" name="ownership" value="0">
+  </p>
+
+
+
+    <p>
+      Enter your comment here : <textarea name="review" maxlength="1024" rows="6" cols="50"></textarea>
+    </p>
+
+    <input type="submit" value="Submit Review">
+</form>
 
 {% endblock %}

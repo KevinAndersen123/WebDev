@@ -1,18 +1,32 @@
-{% extends "base.html" %}
+{% extends "Base.html" %}
+<!--Help from Mohammad-->
+{% block body %}
 
-{% block the_body %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Show List</title>
-    </head>
-    <body>
-        <ul>
-            {% for row in the_data %}
-                <li><a href="/selected/{{ row[0] }}">{{ row[1] }}</a></li>                
-            {% endfor %}
-        </ul>
-        
-    </body>
-</html>
+<p>
+    Game Titles
+</p>
+
+<form  action="insertGamePage">
+    <input type="submit" value="insert a new Game" >
+</form>
+
+<form method="POST" action="/gameDetails">
+<table>
+    <tr>
+        <th>Game Name</th> <th> Likes </th> <th> Dislikes </th> <th> No. of Comments </th>
+        <th> Release Year </th> <th> Genre </th> <th> Game Studio </th> <th> Platform </th>
+    </tr>
+
+    {% for row in the_data %}
+    <tr>
+        <td> {{ row[1] }} </td> <td> {{ row[2] }} </td> <td> {{ row[3] }} </td>  
+        <td> {{ row[4] }} </td> <td> {{ row[5] }} </td> <td> {{ row[6] }} </td>
+        <td> {{ row[7] }} </td> <td> {{ row[8] }} </td> <td><input type="radio" name="gameid" value={{ row[0] }} required="true"></td>
+    </tr>
+    {% endfor %}
+
+</table>
+    <input type="submit" value="View Game" >
+</form>
+
 {% endblock %}
