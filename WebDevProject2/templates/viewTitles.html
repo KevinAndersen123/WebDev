@@ -1,27 +1,27 @@
 {% extends "Base.html" %}
 <!--Help from Mohammad-->
-{% block body %}
+{% block the_body %}
 
 <p>
     Game Titles
 </p>
 
-<form  action="insertGamePage">
-    <input type="submit" value="insert a new Game" >
+<form  action="/insertGamePage">
+    <input type="submit" value="Insert a new Game" >
 </form>
 
 <form method="POST" action="/gameDetails">
 <table>
     <tr>
-        <th>Game Name</th> <th> Likes </th> <th> Dislikes </th> <th> No. of Comments </th>
-        <th> Release Year </th> <th> Genre </th> <th> Game Studio </th> <th> Platform </th>
+        <th> Game </th> <th> Studio  </th> <th> Release Year </th> <th>Genre </th>
+        <th> Platform </th><th> Likes </th> <th> Dislikes </th>
     </tr>
 
     {% for row in the_data %}
     <tr>
         <td> {{ row[1] }} </td> <td> {{ row[2] }} </td> <td> {{ row[3] }} </td>  
         <td> {{ row[4] }} </td> <td> {{ row[5] }} </td> <td> {{ row[6] }} </td>
-        <td> {{ row[7] }} </td> <td> {{ row[8] }} </td> <td><input type="radio" name="gameid" value={{ row[0] }} required="true"></td>
+        <td> {{ row[7] }} </td><td><input type="radio" name="gameID" value={{ row[0] }} required="true"></td>
     </tr>
     {% endfor %}
 

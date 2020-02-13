@@ -1,36 +1,36 @@
 {% extends "Base.html" %}
 
-{% block body %}
+{% block the_body %}
 
 <form method="POST" action="/insertNewGame">
 
     <p>
-        Name of the Game : <input type="text" name="gameName" maxlength="64" required="true">
+        Name of the Game : <input type="text" name="GameName" maxlength="64" required="true">
     </p>
 
     <p>
-        Game Studio Name : <input type="text" name="gameStudio" maxlength="64" required="true">
+        Game Studio Name : <input type="text" name="GameStudio" maxlength="64" required="true">
     </p> 
 
     <p>
-        Release Year : <input type ="number" name="releaseYear" min="1800" max="2020" required="true">
+        Release Year : <input type ="number" name="ReleaseYear" min="1800" max="2020" required="true">
     </p> 
      
     <p>
      
-        Genre :  <select name="genre" required="true">
+        Genre :  <select name="Genre" required="true">
             {% for row in the_data %}
             <option value={{ row[0] }} >{{ row[1] }}</option>
             {% endfor %}
           </select> 
-     
     </p>   
 
     <p>
-        platform :  <select name="platform" required="true">
-            <option value="0">Pc</option>
-            <option value="1">Console</option>
-            <option value="2">Switch</option>
+        platform :  <select name="Platform" required="true">
+            <option value="1">PC</option>
+            <option value="2">Console</option>
+            <option value="3">Switch</option>
+            <option value="4">Mobile</option>
           </select> 
     </p>
 

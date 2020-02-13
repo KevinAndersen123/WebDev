@@ -1,6 +1,6 @@
 {% extends "Base.html" %}
 
-{% block body %}
+{% block the_body %}
 <!--Help from Mohammad-->
 <p>
     Game Details
@@ -9,41 +9,45 @@
 <p>
     <table>
         <tr>
-            <th>Rating</th> <th> User </th> <th> Comment </th><th>Owners</th> <th>Played</th> <th> Like/Dislike </th>
+            <th>User</th> <th> Liked </th> <th> Played </th><th>Owned</th> <th>Rating</th> <th> Comment </th>
         </tr>
-
         {% for row in the_data %}
          <tr>
-             <td> {{ row[1] }} </td> <td> {{ row[2] }} </td> <td> {{ row[4] }} </td>  
+             <td> {{ row[1] }} </td> 
 
-             {% if  row[6]  == 0 %}
-             <td> owned </td> 
-             {% else %}
-             <td> not owned </td> 
-             {% endif %} 
-
-             {% if  row[7]  == 0 %}
-             <td> played </td> 
-             {% else %}
-             <td> not played </td> 
-             {% endif %} 
-
-             {% if  row[8]  == 0 %}
+             {% if row[2] == 0 %}
              <td> nuetral </td> 
-             {% elif  row[8]  == 1 %}
-             <td> like </td> 
+             {% elif  row[2] == 1 %}
+             <td> Liked </td> 
              {% else %}
-             <td> dislike </td> 
+             <td> Disliked </td> 
              {% endif %} 
-            
-            </tr>
+
+             {% if row[3] == 0 %}
+             <td> Played </td> 
+             {% else %}
+             <td> Not Played </td> 
+             {% endif %} 
+
+             {% if row[4] == 0 %}
+             <td> Owned </td> 
+             {% else %}
+             <td> Not Owned </td> 
+             {% endif %} 
+
+             <td> {{ row[5] }} </td><td> {{ row[6] }} </td>
+        </tr>
         {% endfor %}
     
     </table>
 </p>
 
-<form  action="/writeReview">
+<form action="/writeReview">
     <input type="submit" value="Review Game" >
+</form>
+
+<form action="/titles">
+    <input type="submit" value="Return" >
 </form>
 
 

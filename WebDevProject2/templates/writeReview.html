@@ -1,11 +1,9 @@
 {% extends "Base.html" %}
 
-{% block body %}
-
+{% block the_body %}
 <p>
     Review
 </p>
-
 
 <form method="POST" action="/submitReview">
 
@@ -32,17 +30,17 @@
   <p>
     Have you played the game?
     <input type="checkbox" name="played" value="0">
+    <input type="hidden" name="played" value="1">
   </p>
 
   <p>
     Do you own the game? 
     <input type="checkbox" name="ownership" value="0">
+    <input type="hidden" name= "ownership" value="1">
   </p>
 
-
-
     <p>
-      Enter your comment here : <textarea name="review" maxlength="1024" rows="6" cols="50"></textarea>
+      Enter your comment here : <textarea name="comment" maxlength="1024" rows="6" cols="50"></textarea>
     </p>
 
     <input type="submit" value="Submit Review">

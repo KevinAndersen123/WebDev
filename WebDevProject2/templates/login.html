@@ -1,27 +1,26 @@
-{% extends "Base.html" %}
+{% extends "base.html" %}
 <!--Help from Mohammad-->
-{% block body %}
+{% block the_body %}
 
 <p>
     Please insert Login Details
 </p>
 
-<form method="POST" action="/games">
+<form action="/titles">
 
 <p> 
-        Name :  <input type="text" name="loginName">  
+        Name :  <input type="text" name="LoginName">  
         
 </p>
 
 <p> 
-        Password : <input type="text" name="loginPassword">
+        Password : <input type="text" name="LoginPassword">
 </p> 
         
 <p>
-        <input type="submit" value="login">
+        <input type="submit" value="Login">
 </p>
 
 </form>
-
 
 {% endblock %}
