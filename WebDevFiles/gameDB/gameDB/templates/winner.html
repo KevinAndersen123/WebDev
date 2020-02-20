@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block the_body %}
+
+    <p>Well done, you won!</p>
+    <p>You took {{ the_attempts }} attempts.</p>
+    <p>It took you {{ the_time }} seconds.</p>
+    <form action="/recordname" method="POST">
+        <p>Please enter your name:</p>
+        <p><input type="text" name="the_winner"></p>
+        <p><input type="submit" value="Record Win!"></p>
+    </form>
+
+{% endblock %}

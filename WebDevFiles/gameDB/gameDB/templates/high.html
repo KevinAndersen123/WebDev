@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block the_body %}
+
+    <h2>Top 10 Scores on the Leaderboard</h2>
+
+    <ol>
+        <!-- The data is restricted to 10 entries. -->
+        {% for line in the_data[:10] %}  
+        
+            <li>{{ line[0] }} took {{ line[2] }} attempts in {{ line[1] }} seconds.</li>
+
+        {% endfor %}
+        <p>There are currently {{ the_len }} scores on the leaderboard.</p>
+    </ol>
+
+{% endblock %}

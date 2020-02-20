@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block the_body %}
+
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for m in messages %}
+                    <li>{{ m }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+
+    {% block the_message %}
+    {% endblock %}
+
+    <p>Please guess a number between 1 and 1000 (inclusive)</p>
+    <form action="/processguess" method="POST">
+        <p><input type="text" name="the_guess"></p>
+        <p><input type="submit" value="Guess!"></p>
+    </form>
+
+    <p>Click to see the <a href="/highscores">high scores</a> list</p>
+
+{% endblock %}

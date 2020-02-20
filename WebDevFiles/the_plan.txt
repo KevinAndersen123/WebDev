@@ -1,0 +1,21 @@
+
+
+Suggested approach:
+
+1. create new database, user-id, and password.
+
+2. decide on how mant tables and how they relate to each other.
+
+3. design your tables (schema) to conform to 1-N-F where appropriate.
+
+4. work out the SQL needed to add to the tables, and then get data back out again.
+
+5. design the screens/UI that you think you'll need - wireframe.
+
+6. create Python code which does #4 (aka data_utils.py module from Guessing Game).
+
+7. create the HTML templates that we need.
+
+8. tie it all together with Python/Flask code.
+
+Questions:  How do you identify your users?  Are you going to require users to login?
